@@ -3,38 +3,48 @@
     <div class="about-heading">
       <h2>About Me</h2>
     </div>
-    <div class="about-content">
-      <section class="college">
-        <h3 class="college-header">
-          College
-        </h3>
-        <p>
-        </p>
-      </section>
+    <div class="content">
+      <h3 class="content-header">
+        College
+      </h3>
+      <p class="content-body">
+        I attended George Mason University from the fall of 2014 to the spring
+        of 2018. I graduated with a Bachelor's degree in Computer Science with a
+        minor in Business.
+        <br /><br />
+        During my junior year, I interned with a private technology consulting
+        company called Coveros. This company provided Agile certified coaches
+        and mentors to help companies help apply Agile methodologies to their
+        software development process. The internsip focused primarily on
+        encouraging Agile practices while developing a mobile application that
+        would be used in the company's upcoming mobile app testing course.
 
-      <section class="professional"></section>
-      <h3>I'm a Full Stack Web Developer</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ultricies mi eget
-        mauris pharetra. Risus commodo viverra maecenas accumsan. Justo nec
-        ultrices dui sapien. Tincidunt tortor aliquam nulla facilisi cras. Nibh
-        venenatis cras sed felis eget velit aliquet. Eleifend mi in nulla
-        posuere sollicitudin. Mi proin sed libero enim sed faucibus turpis in
-        eu. Bibendum at varius vel pharetra vel. Viverra ipsum nunc aliquet
-        bibendum enim facilisis gravida. Sodales ut eu sem integer vitae.
-        Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Gravida neque
-        convallis a cras semper auctor neque vitae. Faucibus scelerisque
-        eleifend donec pretium vulputate sapien nec sagittis. Vulputate enim
-        nulla aliquet porttitor lacus.<br />
-        <br />
-        Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium
-        vulputate. Elementum nibh tellus molestie nunc non blandit massa enim.
-        Quam lacus suspendisse faucibus interdum. Senectus et netus et
-        malesuada. Non odio euismod lacinia at quis. Quis imperdiet massa
-        tincidunt nunc pulvinar sapien et. Eget arcu dictum varius duis at
-        consectetur lorem donec. Turpis egestas pretium aenean pharetra magna ac
-        placerat vestibulum lectus.
+        <br /><br />During my senior year, I enrolled in George Mason
+        University's first capstone course for computer science students. The
+        capstone course lasted both fall and spring semesters, compared to one
+        semester for a standard course. The capstone featured various companies
+        from ranging in size and software. I joined a team to work for
+        Kryptowire, a company focused on security for web and mobile
+        applications. This company detected security vulnerabilities for a
+        variety of mobile and web applications. The Kryptowire project was to
+        create a tool to disassemble android applications and reassemble with
+        the removal of unncessary surveillance and tracking technologies. An
+        example, would be a flashlight application that requires access to a
+        device's contacts, GPS, ability to make phone calls, etc. A standard
+        flashlight app wouldn't require access to any of those services because
+        the purpose of the application doesn't merit the reliance on those
+        services/technologies.
+      </p>
+
+      <h3 class="content-header">Professional</h3>
+      <p class="content-body-last">
+        After graduating college, I returned to Richmond, VA and started working
+        at SingleComm, a web development company focused on software for call
+        centers. Here, I worked on a variety of projects focused on node js
+        (Javascript & Typescript) frontend and backend development, and deployed
+        & maintained applications through Amazon Web Services (AWS). I worked
+        here for 2 years and some change before moving on to a consulting
+        company called Infinitive.
       </p>
     </div>
   </section>
@@ -55,11 +65,28 @@ export default {
 }
 .about-heading h2 {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 48px;
   color: #111;
 }
 .about-heading h3 {
   width: 100%;
+}
+
+.content-header {
+  font-size: 30px;
+  margin: 15px 0;
+}
+.content-body {
+  font-size: 24px;
+  margin-bottom: 2em;
+}
+.content-body-last {
+  font-size: 24px;
+}
+
+span .li {
+  display: list-item;
+  margin-left: 2em;
 }
 
 .contentBx h3 {
