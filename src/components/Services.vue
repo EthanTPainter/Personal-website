@@ -63,7 +63,7 @@ export default {
 }
 .heading h2 {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 48px;
   color: #fff;
 }
 

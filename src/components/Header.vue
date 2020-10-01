@@ -43,6 +43,7 @@ section {
 .banner h3 {
   font-size: 1.15em;
   color: #fff;
+  font-size: 28px;
   font-weight: 500;
 }
 

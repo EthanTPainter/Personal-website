@@ -63,8 +63,10 @@ header li {
 header ul li a {
   position: relative;
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 30px;
   color: #fff;
+  font-size: 18px;
+  font-weight: 600;
   text-decoration: none;
 }
 
