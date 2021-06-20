@@ -1,34 +1,16 @@
 <template>
   <div id="app">
-    <nav-bar />
-    <the-header />
-    <about-me />
-    <services />
-    <projects />
-    <contact />
-    <the-footer />
+    <home-page />
   </div>
 </template>
 
 <script>
-import TheHeader from "./components/Header";
-import TheFooter from "./components/Footer";
-import NavBar from "./components/NavBar";
-import AboutMe from "./components/About";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import HomePage from "./components/Home";
 
 export default {
   name: "App",
   components: {
-    TheHeader,
-    TheFooter,
-    NavBar,
-    AboutMe,
-    Services,
-    Projects,
-    Contact,
+    HomePage
   },
 };
 </script>

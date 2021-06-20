@@ -1,3 +1,3 @@
 # Personal-website
 
-My [personal website](https://ethantpainter.com) designed with HTML, CSS, and Vue 3
+My [personal website](https://ethantpainter.com) designed with Vue 3
