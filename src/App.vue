@@ -21,5 +21,6 @@ export default {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color: rgb(51, 51, 51);
 }
 </style>

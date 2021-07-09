@@ -1,23 +1,18 @@
 <template>
-  <header v-bind:class="{ sticky: isSticky }">
-    <a href="#home" class="logo">Ethan Painter</a>
+  <header>
     <div class="toggle"></div>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#passions">Passions</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#connect">Connect</a></li>
     </ul>
   </header>
 </template>
 
 <script>
 export default {
-  name: "NavBar",
-  isSticky() {
-    return window.scrollY > 0;
-  },
+  name: "NavBar"
 };
 </script>
 
@@ -41,15 +36,6 @@ header .sticky {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
-  color: #fff;
-  font-size: 24px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
 header ul {
   position: relative;
   display: flex;
@@ -63,14 +49,25 @@ header li {
 header ul li a {
   position: relative;
   display: inline-block;
-  margin: 0 30px;
+  margin: 0 15px;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
 }
 
-header .sticky ul li a {
-  color: #fff;
+header ul li:hover {
+  transform: scale(1.1);
+  transition: .2s;
 }
+
+/*
+Colors for new nav bar when hovered
+Red - #ff0000
+Orange - #ff7400
+Green - #15ff00
+Light blue - #00c5ff
+Blue - #0004ff
+*/
+
 </style>
