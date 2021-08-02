@@ -1,26 +1,30 @@
 <template>
-  <div id="app">
-    <home-page />
+  <div class="bg-blue-light">
+    <Header baseUrl="https://localhost:3000" />
+    <Home />
   </div>
 </template>
 
-<script>
-import HomePage from "./components/Home";
+<script lang="ts">
+import { defineComponent } from "vue";
+import Home from "./components/Home.vue";
+import Header from "./components/Header.vue";
 
-export default {
+export default defineComponent({
   name: "App",
   components: {
-    HomePage
+    Home,
+    Header,
   },
-};
+});
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  background-color: rgb(51, 51, 51);
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 </style>
