@@ -1,5 +1,6 @@
 **/*/dist
 dist
+dist-ssr
 
 **/*/.serverless
 # Logs
@@ -54,6 +55,7 @@ typings/
 
 # Avoid lib (used for python package store locally)
 lib
+*.local
 
 # Avoid pycache storage stored in git
 *pycache*
