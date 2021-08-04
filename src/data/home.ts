@@ -7,7 +7,7 @@ export type HomeDataType = (baseUrl: String) => {
 export const HomeData: HomeDataType = (baseUrl: String) => [
   {
     header: "Hello, I am Ethan!",
-    subHeader: "I'm a Full Stack & Cloud Web Developer currently working @ Capital One in Richmond, VA",
+    subHeader: "I'm a Full Stack Web & AWS Developer currently working @ Capital One in Richmond, VA",
     link: baseUrl,
   },
   {
