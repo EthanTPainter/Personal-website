@@ -1,30 +1,24 @@
 <template>
   <header id="header" role="banner">
     <nav class="header-nav">
-      <!-- Possible loop change here -->
-      <li class="li">
-        <a :href="headerRouteData[0]" />
-        {{ headerTitleData[0] }}
+      <li>
+        <router-link to="/">Home</router-link>
       </li>
       <li class="separator">|</li>
-      <li class="li">
-        <a :href="headerRouteData[1]" />
-        {{ headerTitleData[1] }}
+      <li>
+        <router-link to="/passions">Passions</router-link>
       </li>
       <li class="separator">|</li>
-      <li class="li">
-        <a :href="headerRouteData[2]" />
-        {{ headerTitleData[2] }}
+      <li>
+        <router-link to="skills">Skills & Experience </router-link>
       </li>
       <li class="separator">|</li>
-      <li class="li">
-        <a :href="headerRouteData[3]" />
-        {{ headerTitleData[3] }}
+      <li>
+        <router-link to="/work">Work</router-link>
       </li>
       <li class="separator">|</li>
-      <li class="li">
-        <a :href="headerRouteData[4]" />
-        {{ headerTitleData[4] }}
+      <li>
+        <router-link to="/connect"> Connect </router-link>
       </li>
     </nav>
   </header>
@@ -59,16 +53,17 @@ export default defineComponent({
   height: 20vh;
 }
 .header-nav {
-  text-align: left;
+  text-align: center;
 }
 .separator {
-  margin: 15px;
+  margin: 15px 10px;
   display: inline-block;
 }
 .ul {
   display: inline-block;
 }
-.li {
+li {
   display: inline-block;
+  font-family: "Abril Fatface";
 }
 </style>

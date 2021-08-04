@@ -1,8 +1,10 @@
 <template>
   <div class="bg-blue-light home-background">
     <h1 class="title">{{ header }}</h1>
-    <h2 class="sub-title">{{ subHeader }}</h2>
-    <button type="button" class="bg-green">{{ link }}</button>
+    <div>
+      <h2 class="sub-title">{{ subHeader }}</h2>
+    </div>
+    <button type="button" class="bg-green btn">{{ link }}</button>
     {{ countDown }}
   </div>
 </template>
@@ -32,8 +34,17 @@ export default defineComponent({
 }
 .title {
   font-size: 115px;
+  font-family: "Lobster";
 }
 .sub-title {
-  font-size: 66px;
+  font-size: 30px;
+  font-family: fantasy;
+  max-width: 550px;
+  display: inline-block;
+}
+.btn {
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
 }
 </style>
