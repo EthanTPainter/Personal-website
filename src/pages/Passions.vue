@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-red-light">
+  <div class="passion-bg bg-red-light">
     <p>Passions found here</p>
   </div>
 </template>
@@ -12,3 +12,9 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style scoped>
+.passion-bg {
+  min-height: 100vh;
+}
+</style>

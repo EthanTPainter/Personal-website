@@ -3,7 +3,8 @@ import HomePage from "../pages/Home.vue";
 import PassionsPage from "../pages/Passions.vue";
 import SkillsPage from "../pages/Skills.vue";
 import WorkPage from "../pages/Work.vue";
-import ConnectPage from "../pages/Connect.vue";
+import NotFoundPage from "../pages/NotFound.vue";
+import ColorChangingLoadingAnimation from "../pages/Loading.vue";
 
 const routes = [
   {
@@ -27,9 +28,15 @@ const routes = [
     component: WorkPage,
   },
   {
-    path: "/connect",
-    name: "Connect",
-    component: ConnectPage,
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFoundPage,
+  },
+  // Testing components
+  {
+    path: "/loading",
+    name: "Loading",
+    component: ColorChangingLoadingAnimation
   },
 ];
 

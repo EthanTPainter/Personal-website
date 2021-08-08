@@ -12,3 +12,7 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style scoped>
+
+</style>
