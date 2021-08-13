@@ -19,7 +19,6 @@ export default defineComponent({
   methods: {
     startClick() {
       this.startSelected = true;
-      console.log(this.$refs);
       // Remove intro animation from name, description, and button
       this.$refs.myName.classList.remove("intro-anim");
       this.$refs.myDescr.classList.remove("intro-anim");
@@ -123,7 +122,7 @@ export default defineComponent({
   transition: padding 1s ease-out;
 
   &:hover {
-    padding: 0 10%;
+    padding: 0 5%;
   }
 }
 
