@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <img class="heart" svg-inline src="src/assets/coolicons/heart_outline.svg" />
-    <h1 class="passion">Passions</h1>
+  <div class="main-container">
+    <div @click="emitSelectEvent" class="sub-container">
+      <img class="heart" svg-inline src="src/assets/coolicons/heart_outline.svg" />
+      <h1 class="passion">Passions</h1>
+    </div>
   </div>
 </template>
 
@@ -9,14 +11,30 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  setup() {},
+  emits: ["thumbnail-click-event"],
+  methods: {
+    emitSelectEvent() {
+      // Emit a signal to the parent to call this function
+      console.log("EMIT PASSION CLICK");
+      this.$emit("thumbnail-click-event", {
+        type: "passions"
+      });
+    },
+  },
 });
 </script>
 
 <style scoped lang="scss">
-.container {
+.main-container {
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.sub-container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
   justify-items: center;
   align-items: center;
 }

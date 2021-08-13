@@ -10,7 +10,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "App",
+  name: "HomePage",
   data() {
     return {
       startSelected: false,
@@ -66,6 +66,7 @@ export default defineComponent({
     animation-fill-mode: forwards;
   }
 
+  /* animation to hide the content */
   &.hide-content {
     animation: hide-content 1.5s;
   }
@@ -82,12 +83,14 @@ export default defineComponent({
   font-size: 6rem;
   color: hsl(171, 17%, 92%);
 
+  /* animation to show the text */
   &.intro-anim {
     animation: show-text 1s;
     animation-delay: 4s;
     animation-fill-mode: forwards;
   }
 
+  /* animation to hide the content */
   &.hide-content {
     animation: hide-content 1.5s;
   }
@@ -112,6 +115,7 @@ export default defineComponent({
     animation-delay: 7s;
     animation-fill-mode: forwards;
   }
+  /* animation to hide the content */
   &.hide-content {
     animation: hide-content 1.5s;
   }
