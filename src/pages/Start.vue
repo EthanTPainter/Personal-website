@@ -55,7 +55,6 @@ export default defineComponent({
         this.$refs.work.classList.remove("intro-anim");
         this.$refs.skills.classList.add("hide-content");
         this.$refs.work.classList.add("hide-content");
-        this.$refs.
       }
       if (this.skillsSelected) {
         console.log(this.$refs.passions);
@@ -149,8 +148,7 @@ export default defineComponent({
   opacity: 0;
   border-radius: 2rem;
   background: rgb(214, 214, 214);
-  animation: show-content 1s, move-bars 2s alternate infinite;
-  animation-delay: 1s;
+  animation: show-content 1s, barrier1-move-bars 2s alternate infinite;
   animation-fill-mode: forwards;
 }
 .barrier2 {
@@ -161,8 +159,7 @@ export default defineComponent({
   border-radius: 2rem;
   opacity: 0;
   background: rgb(255, 255, 255);
-  animation: show-content 1s, move-bars 2s alternate infinite;
-  animation-delay: 2s;
+  animation: show-content 1s, barrier2-move-bars 2s alternate infinite;
   animation-fill-mode: forwards;
 }
 
@@ -175,12 +172,20 @@ export default defineComponent({
     opacity: 1;
   }
 }
-@keyframes move-bars {
+@keyframes barrier1-move-bars {
   0% {
     margin: 0% 2% 0 2%;
   }
   100% {
     margin: 50% 2% 0 2%;
+  }
+}
+@keyframes barrier2-move-bars {
+  0% {
+    margin: 50% 2% 0 2%;
+  }
+  100% {
+    margin: 0% 2% 0 2%;
   }
 }
 @keyframes hide-content {

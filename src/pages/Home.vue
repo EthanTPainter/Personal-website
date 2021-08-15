@@ -1,8 +1,27 @@
 <template>
   <div class="bg-grey-darkest home-background">
-    <div ref="myName" class="name intro-anim">Ethan Painter</div>
-    <div ref="myDescr" class="description intro-anim">Full Stack Web & Cloud Developer</div>
-    <button ref="startButton" @click="startClick" class="btn start-btn intro-anim">Start</button>
+    <div
+      ref="myName"
+      class="name"
+      :class="{ 'intro-anim': triggerIntroAnimation, 'hide-content': triggerHideAnimation }"
+    >
+      Ethan Painter
+    </div>
+    <div
+      ref="myDescr"
+      class="description"
+      :class="{ 'intro-anim': triggerIntroAnimation, 'hide-content': triggerHideAnimation }"
+    >
+      Full Stack Web & Cloud Developer
+    </div>
+    <button
+      ref="startButton"
+      @click="startClick"
+      class="btn start-btn"
+      :class="{ 'intro-anim': triggerIntroAnimation, 'hide-content': triggerHideAnimation }"
+    >
+      Learn More
+    </button>
   </div>
 </template>
 
@@ -13,21 +32,16 @@ export default defineComponent({
   name: "HomePage",
   data() {
     return {
+      triggerIntroAnimation: true,
+      triggerHideAnimation: false,
       startSelected: false,
     };
   },
   methods: {
     startClick() {
       this.startSelected = true;
-      // Remove intro animation from name, description, and button
-      this.$refs.myName.classList.remove("intro-anim");
-      this.$refs.myDescr.classList.remove("intro-anim");
-      this.$refs.startButton.classList.remove("intro-anim");
-
-      // Add new hide animation
-      this.$refs.myName.classList.add("hide-content");
-      this.$refs.myDescr.classList.add("hide-content");
-      this.$refs.myName.classList.add("hide-content");
+      this.triggerIntoAnimation = false;
+      this.triggerHideAnimation = true;
 
       setTimeout(() => {
         this.$router.push("start");
@@ -51,12 +65,10 @@ export default defineComponent({
 .name {
   position: absolute;
   opacity: 0;
-  top: 35%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 2%;
   font-family: "Lobster";
-  font-size: 8rem;
+  font-size: 15rem;
   color: hsl(171, 17%, 92%);
 
   /* animation to show the text */
@@ -73,12 +85,9 @@ export default defineComponent({
 }
 .description {
   position: absolute;
-  text-align: center;
   opacity: 0;
-  top: 55%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 2%;
   font-family: "Lobster";
   font-size: 6rem;
   color: hsl(171, 17%, 92%);
@@ -104,15 +113,14 @@ export default defineComponent({
   position: absolute;
   text-align: center;
   opacity: 0;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   font-family: "Lobster";
   font-size: 3rem;
   color: hsl(171, 17%, 92%);
+
   /* animation to show the text */
   &.intro-anim {
     animation: show-text 1s;
-    animation-delay: 7s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
   /* animation to hide the content */
@@ -121,13 +129,8 @@ export default defineComponent({
   }
 }
 .start-btn {
-  top: 75%;
-  left: 50%;
-  transition: padding 1s ease-out;
-
-  &:hover {
-    padding: 0 5%;
-  }
+  top: 65%;
+  left: 30%;
 }
 
 /* Keyframes for showing text */
