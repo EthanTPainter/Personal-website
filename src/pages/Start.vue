@@ -1,15 +1,39 @@
 <template>
   <div class="bg-grey-darkest start-background">
     <div class="main-container">
-      <div ref="passions" class="passion-container intro-anim">
+      <div
+        ref="passions"
+        class="passion-container intro-anim"
+        :class="{
+          'intro-anim': triggerIntroAnimation,
+          'hide-content': triggerHideAnimation,
+          'animate-color': triggerColorAnimation,
+        }"
+      >
         <passion-thumbnail @thumbnail-click-event="handleSelectionClick"></passion-thumbnail>
       </div>
       <div class="barrier1"></div>
-      <div ref="skills" class="skills-container intro-anim">
+      <div
+        ref="skills"
+        class="skills-container"
+        :class="{
+          'intro-anim': triggerIntroAnimation,
+          'hide-content': triggerHideAnimation,
+          'animate-color': triggerColorAnimation,
+        }"
+      >
         <skills-thumbnail @thumbnail-click-event="handleSelectionClick"></skills-thumbnail>
       </div>
       <div class="barrier2"></div>
-      <div ref="work" class="work-container intro-anim">
+      <div
+        ref="work"
+        class="work-container"
+        :class="{
+          'intro-anim': triggerIntroAnimation,
+          'hide-content': triggerHideAnimation,
+          'animate-color': triggerColorAnimation,
+        }"
+      >
         <work-thumbnail @thumbnail-click-event="handleSelectionClick"></work-thumbnail>
       </div>
     </div>
@@ -35,6 +59,9 @@ export default defineComponent({
       passionSelected: false,
       skillsSelected: false,
       workSelected: false,
+      triggerIntroAnimation: true,
+      triggerHideAnimation: false,
+      triggerColorAnimation: false,
     };
   },
   methods: {
@@ -43,28 +70,10 @@ export default defineComponent({
         return;
       }
       const eventType = event.type;
-      this.passionSelected = event.type === "passions";
-      this.skillsSelected = event.type === "skills";
-      this.workSelected = event.type === "work";
+      this.passionSelected = eventType === "passions";
+      this.skillsSelected = eventType === "skills";
+      this.workSelected = eventType === "work";
 
-      // Hide other sections before transition to new page
-      if (this.passionSelected) {
-        console.log(this.$refs.skills);
-        console.log(this.$refs.work);
-        this.$refs.skills.classList.remove("intro-anim");
-        this.$refs.work.classList.remove("intro-anim");
-        this.$refs.skills.classList.add("hide-content");
-        this.$refs.work.classList.add("hide-content");
-      }
-      if (this.skillsSelected) {
-        console.log(this.$refs.passions);
-        console.log(this.$refs.work);
-      }
-      if (this.workSelected) {
-        console.log(this.$refs.passions);
-        console.log(this.$refs.skills);
-      }
- 
       setTimeout(() => {
         // this.$router.push(eventType);
       }, 2000);
