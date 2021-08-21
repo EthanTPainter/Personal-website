@@ -1,6 +1,8 @@
 <template>
   <div class="bg-grey-darkest">
-    <h1 class="text">Uh oh. How did you get here!?</h1>
+    <h1 class="text">Uhhhhh.....</h1>
+    <h2 class="text">How did you get here!?</h2>
+    <h3><a href="/">Home</a></h3>
   </div>
 </template>
 
@@ -24,6 +26,22 @@ h1 {
   font-size: 2rem;
   position: absolute;
   top: 30%;
+  left: 30%;
+}
+h2 {
+  color: hsl(171, 17%, 92%);
+  font-family: initial;
+  font-size: 2rem;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+h3 {
+  color: hsl(171, 17%, 92%);
+  font-family: initial;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
   left: 30%;
 }
 </style>

@@ -6,32 +6,27 @@
         class="passion-container intro-anim"
         :class="{
           'intro-anim': triggerIntroAnimation,
-          'hide-content': triggerHideAnimation,
-          'animate-color': triggerColorAnimation,
+          'hide-content': triggerHideAnimation.includes('passions'),
         }"
       >
         <passion-thumbnail @thumbnail-click-event="handleSelectionClick"></passion-thumbnail>
       </div>
-      <div class="barrier1"></div>
       <div
         ref="skills"
         class="skills-container"
         :class="{
           'intro-anim': triggerIntroAnimation,
-          'hide-content': triggerHideAnimation,
-          'animate-color': triggerColorAnimation,
+          'hide-content': triggerHideAnimation.includes('skills'),
         }"
       >
         <skills-thumbnail @thumbnail-click-event="handleSelectionClick"></skills-thumbnail>
       </div>
-      <div class="barrier2"></div>
       <div
         ref="work"
         class="work-container"
         :class="{
           'intro-anim': triggerIntroAnimation,
-          'hide-content': triggerHideAnimation,
-          'animate-color': triggerColorAnimation,
+          'hide-content': triggerHideAnimation.includes('work'),
         }"
       >
         <work-thumbnail @thumbnail-click-event="handleSelectionClick"></work-thumbnail>
@@ -56,16 +51,17 @@ export default defineComponent({
   },
   data() {
     return {
+      // Section selected vars
       passionSelected: false,
       skillsSelected: false,
       workSelected: false,
+      // Show/Hide animation vars
       triggerIntroAnimation: true,
-      triggerHideAnimation: false,
-      triggerColorAnimation: false,
+      triggerHideAnimation: [],
     };
   },
   methods: {
-    handleSelectionClick(event) {
+    async handleSelectionClick(event) {
       if (!event || !event.type) {
         return;
       }
@@ -74,9 +70,27 @@ export default defineComponent({
       this.skillsSelected = eventType === "skills";
       this.workSelected = eventType === "work";
 
+      // Hide two sections not selected
+      this.passionSelected ? null : this.triggerHideAnimation.push("passions");
+      this.skillsSelected ? null : this.triggerHideAnimation.push("skills");
+      this.workSelected ? null : this.triggerHideAnimation.push("work");
+
+      // Wait and hide the last remaining section
+      await this.delay(1500);
+      this.passionSelected ? this.triggerHideAnimation.push("passions"): null;
+      this.skillsSelected ? this.triggerHideAnimation.push("skills") : null;
+      this.workSelected ? this.triggerHideAnimation.push("work") : null;
+
       setTimeout(() => {
-        // this.$router.push(eventType);
-      }, 2000);
+        this.$router.push(eventType);
+      }, 500);
+    },
+    delay(time) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, time);
+      });
     },
   },
 });
@@ -88,16 +102,17 @@ export default defineComponent({
   height: 100%;
 }
 .main-container {
-  min-height: 100vh;
-  display: flex;
+  min-height: 25vh;
+  display: grid;
+  grid-template-areas:
+    "passions"
+    "skills"
+    "work";
 }
 
 /* Content Containers */
 .passion-container {
-  min-height: 100vh;
-  order: 0;
-  width: 30%;
-  display: flex;
+  grid-area: passions;
   opacity: 0;
 
   /* animation to show the content */
@@ -112,10 +127,7 @@ export default defineComponent({
   }
 }
 .skills-container {
-  min-height: 100vh;
-  order: 2;
-  width: 30%;
-  display: flex;
+  grid-area: skills;
   opacity: 0;
 
   /* animation to show the content */
@@ -130,10 +142,7 @@ export default defineComponent({
   }
 }
 .work-container {
-  min-height: 100vh;
-  order: 4;
-  width: 30%;
-  display: flex;
+  grid-area: work;
   opacity: 0;
 
   /* animation to show the content */
@@ -148,53 +157,13 @@ export default defineComponent({
   }
 }
 
-/* Barrier Containers */
-.barrier1 {
-  order: 1;
-  width: 0.2%;
-  margin: 5% 2% 0 2%;
-  max-height: 50vh;
-  opacity: 0;
-  border-radius: 2rem;
-  background: rgb(214, 214, 214);
-  animation: show-content 1s, barrier1-move-bars 2s alternate infinite;
-  animation-fill-mode: forwards;
-}
-.barrier2 {
-  order: 2;
-  width: 0.2%;
-  margin: 5% 2% 0 2%;
-  max-height: 50vh;
-  border-radius: 2rem;
-  opacity: 0;
-  background: rgb(255, 255, 255);
-  animation: show-content 1s, barrier2-move-bars 2s alternate infinite;
-  animation-fill-mode: forwards;
-}
-
-/* Keyframes for showing barriers */
+/* Keyframes for showing/hiding text */
 @keyframes show-content {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes barrier1-move-bars {
-  0% {
-    margin: 0% 2% 0 2%;
-  }
-  100% {
-    margin: 50% 2% 0 2%;
-  }
-}
-@keyframes barrier2-move-bars {
-  0% {
-    margin: 50% 2% 0 2%;
-  }
-  100% {
-    margin: 0% 2% 0 2%;
   }
 }
 @keyframes hide-content {

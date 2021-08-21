@@ -59,12 +59,12 @@ export default defineComponent({
       await this.delay(2000);
       this.triggerQuickHideBtnAnimation = true;
 
-      /* Wait for hide btn animation to execute */
+      /* Wait for hide btn animation to show button with new text */
       await this.delay(500);
       this.btnText = "Starting now...";
       this.triggerQuickShowBtnAnimation = true;
 
-      /* Trigger hide animation */
+      /* Trigger hide animation to completely hide button */
       await this.delay(2500);
       this.triggerQuickShowBtnAnimation = false;
       this.triggerHideBtnAnimation = true;

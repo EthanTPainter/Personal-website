@@ -1,7 +1,6 @@
 <template>
   <div class="main-container">
     <div @click="emitSelectEvent" class="sub-container">
-      <img class="laptop" svg-inline src="src/assets/coolicons/laptop.svg" />
       <h1 class="work">Work</h1>
     </div>
   </div>
@@ -28,23 +27,17 @@ export default defineComponent({
 .main-container {
   width: 100%;
   height: 100%;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: center;
   align-items: center;
 }
 .sub-container {
   display: grid;
   width: 100%;
-  justify-items: center;
   align-items: center;
-}
-.laptop {
-  width: 30%;
-  grid-row: 2;
 }
 .work {
   font-size: 10rem;
   color: white;
-  grid-row: 3;
+  padding-left: 10rem;
+  font-size: 40rem;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <div @click="emitSelectEvent" class="sub-container">
-      <img class="js" svg-inline src="src/assets/coolicons/javascript.svg" />
       <h1 class="skills">Skills</h1>
+      <div class="barrier"></div>
     </div>
   </div>
 </template>
@@ -28,23 +28,44 @@ export default defineComponent({
 .main-container {
   width: 100%;
   height: 100%;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: center;
   align-items: center;
 }
 .sub-container {
   display: grid;
   width: 100%;
-  justify-items: center;
   align-items: center;
-}
-.js {
-  width: 30%;
-  grid-row: 2;
 }
 .skills {
   font-size: 10rem;
   color: white;
-  grid-row: 3;
+  padding-left: 10rem;
+  font-size: 40rem;
+}
+.barrier {
+  order: 1;
+  width: 0.2%;
+  margin: 5% 2% 0 2%;
+  opacity: 0;
+  border-radius: 2rem;
+  background: rgb(214, 214, 214);
+  // animation: show-content 1s, barrier-move-bars 2s alternate infinite;
+  animation-fill-mode: forwards;
+}
+/* Keyframes for animations */
+@keyframes show-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes barrier-move-bars {
+  0% {
+    margin: 50% 2% 0 2%;
+  }
+  100% {
+    margin: 0% 2% 0 2%;
+  }
 }
 </style>

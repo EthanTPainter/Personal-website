@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-light">
+  <div class="skills-bg bg-grey-darkest">
     <p>Skills found here!</p>
   </div>
 </template>
@@ -14,5 +14,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.skills-bg {
+  min-height: 100vh;
+}
 </style>

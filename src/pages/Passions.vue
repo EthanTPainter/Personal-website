@@ -1,5 +1,5 @@
 <template>
-  <div class="passion-bg bg-red-light">
+  <div class="passion-bg bg-grey-darkest">
     <p>Passions found here</p>
   </div>
 </template>

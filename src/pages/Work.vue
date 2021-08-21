@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-light">
+  <div class="work-bg bg-grey-darkest">
     <p>Work posted here!</p>
   </div>
 </template>
@@ -14,5 +14,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.work-bg {
+  min-height: 100vh;
+}
 </style>
