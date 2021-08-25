@@ -1,35 +1,60 @@
 <template>
   <div class="nav-container">
-    <div class="option" :class="{ }">
-      <img
-        v-if="isHomeRoute"
-        src="src/assets/iconmonstr-play-thin.svg"
-        class="white-filter" />
-      <h3>{{ homeText }}</h3>
+    <div class="option">
+      <h3
+        @mouseover="mouseOver('home')"
+        @mouseleave="mouseLeave()"
+        @click="changeRoute('start')"
+        class="option__text"
+        :class="{
+          option__active: isHomeRoute,
+          option__mouseOver: showHomeBorder,
+        }"
+      >
+        Home
+      </h3>
     </div>
     <div class="option passions-option">
-      <img
-        v-if="isPassionRoute"
-        src="src/assets/iconmonstr-play-thin.svg"
-        class="white-filter"
-      />
-      <h3>{{ passionText }}</h3>
+      <h3
+        @mouseover="mouseOver('passion')"
+        @mouseleave="mouseLeave()"
+        @click="changeRoute('passions')"
+        class="option__text"
+        :class="{
+          option__active: isPassionRoute,
+          option__mouseOver: showPassionBorder,
+        }"
+      >
+        Passions
+      </h3>
     </div>
     <div class="option skills-option">
-      <img
-        v-if="isSkillRoute"
-        src="src/assets/iconmonstr-play-thin.svg"
-        class="white-filter"
-      />
-      <h3>{{ skillText }}</h3>
+      <h3
+        @mouseover="mouseOver('skill')"
+        @mouseleave="mouseLeave()"
+        @click="changeRoute('skills')"
+        class="option__text"
+        :class="{
+          option__active: isSkillRoute,
+          option__mouseOver: showSkillBorder,
+        }"
+      >
+        Skills
+      </h3>
     </div>
     <div class="option work-option">
-      <img
-        v-if="isWorkRoute"
-        src="src/assets/iconmonstr-play-thin.svg"
-        class="white-filter"
-      />
-      <h3>{{ workText }}</h3>
+      <h3
+        @mouseover="mouseOver('work')"
+        @mouseleave="mouseLeave()"
+        @click="changeRoute('work')"
+        class="option__text"
+        :class="{
+          option__active: isWorkRoute,
+          option__mouseOver: showWorkBorder,
+        }"
+      >
+        Work
+      </h3>
     </div>
   </div>
 </template>
@@ -42,35 +67,88 @@ export default defineComponent({
   name: "Nav",
   data() {
     const path = useRoute().path;
-    const isHomeRoute = path.includes("start");
-    const isPassionRoute = path.includes("passions");
-    const isSkillRoute = path.includes("skills");
-    const isWorkRoute = path.includes("work");
     return {
-      // valid routes
-      isHomeRoute,
-      isPassionRoute,
-      isSkillRoute,
-      isWorkRoute,
-      // Default text
-      homeText: "H",
-      passionText: "P",
-      skillText: "S",
-      workText: "W",
+      // route checking
+      isHomeRoute: path.includes("start"),
+      isPassionRoute: path.includes("passions"),
+      isSkillRoute: path.includes("skills"),
+      isWorkRoute: path.includes("work"),
+      // Show Border vars
+      showHomeBorder: false,
+      showPassionBorder: false,
+      showSkillBorder: false,
+      showWorkBorder: false,
     };
   },
   setup() {},
+  methods: {
+    mouseOver(navItem) {
+      this.showHomeBorder = navItem === "home" ? true : false;
+      this.showPassionBorder = navItem === "passion" ? true : false;
+      this.showSkillBorder = navItem === "skill" ? true : false;
+      this.showWorkBorder = navItem === "work" ? true : false;
+    },
+    mouseLeave() {
+      this.showHomeBorder = false;
+      this.showPassionBorder = false;
+      this.showSkillBorder = false;
+      this.showWorkBorder = false;
+    },
+    changeRoute(newPath) {
+      // Need to add animation here to hide content
+      this.$router.push(newPath);
+    },
+  },
 });
 </script>
 
 <style scoped lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
 * {
   margin: 0;
   padding: 0;
 }
 
+.nav-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .option {
   display: block;
+  font-size: 1.2rem;
+  font-family: Lato, sans-serif;
+  padding: 0 2rem 0 2rem;
+
+  &__text {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0rem 1rem;
+    border-top: solid;
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-color: #111827;
+    border-width: 2px;
+    border-radius: 0.1rem;
+    transition: border-left 0.3s ease-in 0.3s, border-right 0.3s ease-in 0.3s,
+      border-top 0.3s ease-in;
+  }
+
+  &__active {
+    border-bottom: 1px solid white;
+    padding-bottom: 2px;
+  }
+
+  &__mouseOver {
+    border: 2px solid;
+    border-color: linear-gradient(#399953, #399953),
+      linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33),
+      linear-gradient(#377af5, #377af5);
+    border-radius: 0.1rem;
+  }
 }
 
 .white-filter {
