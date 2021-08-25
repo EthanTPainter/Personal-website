@@ -1,6 +1,6 @@
 <template>
   <div class="passion-bg bg-grey-darkest">
-    <Nav></Nav>
+    <Nav class="nav"></Nav>
   </div>
 </template>
 
@@ -20,5 +20,9 @@ export default defineComponent({
 <style scoped>
 .passion-bg {
   min-height: 100vh;
+}
+
+.nav {
+  padding: 2rem 0 0 3rem;
 }
 </style>
