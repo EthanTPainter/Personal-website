@@ -27,17 +27,17 @@ export default defineComponent({
 .main-container {
   width: 100%;
   height: 100%;
-  align-items: center;
 }
 .sub-container {
-  display: grid;
   width: 100%;
-  align-items: center;
 }
 .passion {
   font-size: 10rem;
   color: white;
   padding-left: 10rem;
-  font-size: 40rem;
+
+  &:hover {
+    cursor: grab;
+  }
 }
 </style>

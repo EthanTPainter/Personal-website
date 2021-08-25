@@ -83,7 +83,7 @@ export default defineComponent({
 
       setTimeout(() => {
         this.$router.push(eventType);
-      }, 500);
+      }, 750);
     },
     delay(time) {
       return new Promise((resolve) => {
@@ -103,16 +103,11 @@ export default defineComponent({
 }
 .main-container {
   min-height: 25vh;
-  display: grid;
-  grid-template-areas:
-    "passions"
-    "skills"
-    "work";
+  padding-top: 1rem;
 }
 
 /* Content Containers */
 .passion-container {
-  grid-area: passions;
   opacity: 0;
 
   /* animation to show the content */
@@ -127,7 +122,6 @@ export default defineComponent({
   }
 }
 .skills-container {
-  grid-area: skills;
   opacity: 0;
 
   /* animation to show the content */
@@ -142,7 +136,6 @@ export default defineComponent({
   }
 }
 .work-container {
-  grid-area: work;
   opacity: 0;
 
   /* animation to show the content */
