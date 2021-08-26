@@ -32,7 +32,6 @@ export default defineComponent({
     KryptowireCard,
     CoverosCard,
   },
-  setup() {},
 });
 </script>
 

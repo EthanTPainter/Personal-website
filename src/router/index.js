@@ -33,16 +33,17 @@ const routes = [
     name: "Start",
     component: StartPage
   },
-  {
-    path: "/:catchAll(.*)",
-    name: "NotFound",
-    component: NotFoundPage,
-  },
   // Testing components
   {
     path: "/loading",
     name: "Loading",
     component: ColorChangingLoadingAnimation
+  },
+  // Catch unknown routes
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFoundPage,
   },
 ];
 

@@ -30,7 +30,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "SingleCommCard",
-  setup() {},
 });
 </script>
 

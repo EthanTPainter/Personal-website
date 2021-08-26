@@ -80,7 +80,6 @@ export default defineComponent({
       showWorkBorder: false,
     };
   },
-  setup() {},
   methods: {
     mouseOver(navItem) {
       this.showHomeBorder = navItem === "home" ? true : false;

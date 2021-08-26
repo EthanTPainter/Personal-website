@@ -83,7 +83,7 @@ export default defineComponent({
 
       setTimeout(() => {
         this.$router.push(eventType);
-      }, 750);
+      }, 1000);
     },
     delay(time) {
       return new Promise((resolve) => {
@@ -103,7 +103,7 @@ export default defineComponent({
 }
 .main-container {
   min-height: 25vh;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 /* Content Containers */
@@ -113,7 +113,7 @@ export default defineComponent({
   /* animation to show the content */
   &.intro-anim {
     animation: show-content 0.5s;
-    animation-delay: 3s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
@@ -127,7 +127,7 @@ export default defineComponent({
   /* animation to show the content */
   &.intro-anim {
     animation: show-content 0.5s;
-    animation-delay: 3s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
@@ -141,7 +141,7 @@ export default defineComponent({
   /* animation to show the content */
   &.intro-anim {
     animation: show-content 0.5s;
-    animation-delay: 3s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
