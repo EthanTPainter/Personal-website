@@ -1,5 +1,5 @@
 <template>
-  <div class="work-bg bg-grey-darkest">
+  <div class="work-bg">
     <Nav class="nav"></Nav>
     <IntroWorkCard></IntroWorkCard>
     <CapOneCard></CapOneCard>
@@ -37,6 +37,7 @@ export default defineComponent({
 
 <style scoped>
 .work-bg {
+  background: #111827;
   min-height: 100vh;
 }
 

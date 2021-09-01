@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-darkest start-background">
+  <div class="start-background">
     <div class="main-container">
       <div
         ref="passions"
@@ -9,7 +9,9 @@
           'hide-content': triggerHideAnimation.includes('passions'),
         }"
       >
-        <passion-thumbnail @thumbnail-click-event="handleSelectionClick"></passion-thumbnail>
+        <passion-thumbnail
+          @thumbnail-click-event="handleSelectionClick"
+        ></passion-thumbnail>
       </div>
       <div
         ref="skills"
@@ -19,7 +21,9 @@
           'hide-content': triggerHideAnimation.includes('skills'),
         }"
       >
-        <skills-thumbnail @thumbnail-click-event="handleSelectionClick"></skills-thumbnail>
+        <skills-thumbnail
+          @thumbnail-click-event="handleSelectionClick"
+        ></skills-thumbnail>
       </div>
       <div
         ref="work"
@@ -29,7 +33,9 @@
           'hide-content': triggerHideAnimation.includes('work'),
         }"
       >
-        <work-thumbnail @thumbnail-click-event="handleSelectionClick"></work-thumbnail>
+        <work-thumbnail
+          @thumbnail-click-event="handleSelectionClick"
+        ></work-thumbnail>
       </div>
     </div>
   </div>
@@ -77,7 +83,7 @@ export default defineComponent({
 
       // Wait and hide the last remaining section
       await this.delay(1500);
-      this.passionSelected ? this.triggerHideAnimation.push("passions"): null;
+      this.passionSelected ? this.triggerHideAnimation.push("passions") : null;
       this.skillsSelected ? this.triggerHideAnimation.push("skills") : null;
       this.workSelected ? this.triggerHideAnimation.push("work") : null;
 
@@ -98,17 +104,17 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .start-background {
+  background: #111827;
   min-height: 100vh;
-  height: 100%;
 }
 .main-container {
-  min-height: 25vh;
   padding-top: 2rem;
 }
 
 /* Content Containers */
 .passion-container {
   opacity: 0;
+  max-height: 25vh;
 
   /* animation to show the content */
   &.intro-anim {
@@ -123,6 +129,7 @@ export default defineComponent({
 }
 .skills-container {
   opacity: 0;
+  max-height: 25vh;
 
   /* animation to show the content */
   &.intro-anim {
@@ -137,6 +144,7 @@ export default defineComponent({
 }
 .work-container {
   opacity: 0;
+  max-height: 25vh;
 
   /* animation to show the content */
   &.intro-anim {

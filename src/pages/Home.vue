@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-darkest home-background">
+  <div class="home-background">
     <div
       ref="myName"
       class="name"
@@ -71,13 +71,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 /* Background styling */
 .home-background {
+  background: #111827;
   min-height: 100vh;
 }
 /* Text CSS */
@@ -87,7 +83,7 @@ export default defineComponent({
   top: 10%;
   left: 2%;
   font-family: "Lobster";
-  font-size: 15rem;
+  font-size: 15em;
   color: hsl(171, 17%, 92%);
 
   /* animation to show the text */
@@ -108,7 +104,7 @@ export default defineComponent({
   top: 45%;
   left: 2%;
   font-family: "Lobster";
-  font-size: 6rem;
+  font-size: 6em;
   color: hsl(171, 17%, 92%);
 
   /* animation to show the text */
@@ -126,6 +122,7 @@ export default defineComponent({
 
 /* Button CSS */
 .btn {
+  background: #111827;
   top: 65%;
   left: 30%;
   border: solid;

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-darkest">
+  <div class="container">
     <h1 class="text">Uhhhhh.....</h1>
     <h2 class="text">How did you get here!?</h2>
     <h3><a href="/">Home</a></h3>
@@ -15,8 +15,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-div {
-  background: "bg-grey-darkest";
+.container {
+  background: #111827;
   min-height: 100vh;
 }
 h1 {

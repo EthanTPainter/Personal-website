@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-red">
+  <div class="container">
     <img class="img" src="src/assets/cards/singlecomm.svg" />
     <h2 class="txt">June 11th 2018 - October 2nd, 2020</h2>
     <p class="txt">
@@ -35,6 +35,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
+  background: #F87171;
   display: grid;
   grid-template-areas:
     "img txt"

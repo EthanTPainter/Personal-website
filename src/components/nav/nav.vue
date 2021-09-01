@@ -143,9 +143,7 @@ export default defineComponent({
 
   &__mouseOver {
     border: 2px solid;
-    border-color: linear-gradient(#399953, #399953),
-      linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33),
-      linear-gradient(#377af5, #377af5);
+    border-color: solid white;
     border-radius: 0.1rem;
   }
 }

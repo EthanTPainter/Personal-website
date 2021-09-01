@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-orange">
+  <div class="container">
     <img class="img" src="src/assets/cards/infinitive.svg" />
     <h2 class="txt">October 5th, 2020 - FEBRUARY 19th, 2021</h2>
     <p class="txt">
@@ -35,6 +35,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
+  background: #D97706;
   display: grid;
   grid-template-areas:
     "img txt"

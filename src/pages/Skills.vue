@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-bg bg-grey-darkest">
+  <div class="skills-bg">
     <Nav class="nav"></Nav>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default defineComponent({
 
 <style scoped>
 .skills-bg {
+  background: #111827;
   min-height: 100vh;
 }
 
