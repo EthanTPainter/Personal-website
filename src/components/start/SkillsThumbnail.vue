@@ -1,9 +1,7 @@
 <template>
-  <div class="main-container">
-    <div @click="emitSelectEvent" class="sub-container">
-      <h1 class="skills">Skills</h1>
-      <div class="barrier"></div>
-    </div>
+  <div @click="emitSelectEvent" class="sub-container">
+    <h1 class="skills">Skills</h1>
+    <div class="barrier"></div>
   </div>
 </template>
 
@@ -25,17 +23,13 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.main-container {
-  width: 100%;
-  height: 100%;
-}
 .sub-container {
   width: 100%;
 }
 .skills {
-  font-size: 10rem;
+  font-size: 10em;
   color: white;
-  padding-left: 10rem;
+  text-align: center;
 
   &:hover {
     cursor: grab;
