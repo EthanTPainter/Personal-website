@@ -1,27 +1,27 @@
 <template>
   <div class="container">
     <img class="img" src="src/assets/cards/Coveros.png" />
-    <h2 class="txt">June 5th 2017 - August 4th, 2017</h2>
-    <p class="txt">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at
-      varius vel pharetra vel turpis. Pretium fusce id velit ut. Viverra
-      accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Nibh ipsum
-      consequat nisl vel pretium. Cras tincidunt lobortis feugiat vivamus.
-      Integer feugiat scelerisque varius morbi enim nunc faucibus a
-      pellentesque. Purus gravida quis blandit turpis cursus in hac habitasse
-      platea. Amet risus nullam eget felis eget nunc lobortis mattis. Justo
-      donec enim diam vulputate ut pharetra. Ultricies integer quis auctor elit
-      sed vulputate mi. Est velit egestas dui id ornare arcu odio. Adipiscing
-      commodo elit at imperdiet dui accumsan sit amet. Diam sollicitudin tempor
-      id eu nisl. Quam quisque id diam vel. Augue neque gravida in fermentum.
-      Auctor neque vitae tempus quam pellentesque nec. Volutpat ac tincidunt
-      vitae semper quis. Euismod in pellentesque massa placerat duis ultricies
-      lacus. Et netus et malesuada fames ac turpis. Tortor posuere ac ut
-      consequat semper viverra nam. Egestas maecenas pharetra convallis posuere
-      morbi leo urna molestie at. Imperdiet nulla malesuada pellentesque elit
-      eget gravida cum sociis.
-    </p>
+    <h1 class="role">Software Development Intern</h1>
+    <h2 class="date">June 5th 2017 - August 4th, 2017</h2>
+    <ul class="text">
+      <li>
+        Developed open source, hybrid, mobile application for a future mobile
+        app testing course
+      </li>
+      <li>
+        Created and maintained continuous integration (CI) pipeline for
+        building, testing, and deployment through Jenkins
+      </li>
+      <li>
+        Simulated Agile experience with designated Special Matter Expert (SME),
+        scrum master, scrum team, and customer
+      </li>
+      <li>Certified in Agile processes/practices via IC Agile (June 2017)</li>
+      <li>
+        Presented a demo of the project and discussed internship experience to
+        all members of the company during a company All Hands.
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,22 +35,42 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
-  background: #2563EB;
+  background: #2563eb;
   display: grid;
   grid-template-areas:
     "img txt"
-    "img txt";
-  margin-top: 10%;
-  margin-left: 10%;
+    "img txt"
+    "role txt"
+    "date txt";
+  margin-top: 10em;
+  margin-left: 12em;
   width: 60%;
   border-radius: 0.5rem;
 }
 
 .img {
   grid-area: img;
+  justify-self: center;
+  align-self: center;
+  height: 17vh;
+  margin: 3em;
 }
-
+.role {
+  grid-area: role;
+  font-size: 1.2em;
+  margin-top: -1em;
+  justify-self: center;
+  align-self: start;
+}
+.date {
+  grid-area: date;
+  font-size: 1em;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 1.5em;
+}
 .text {
   grid-area: txt;
+  align-self: center;
 }
 </style>

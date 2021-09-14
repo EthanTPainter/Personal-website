@@ -1,27 +1,28 @@
 <template>
   <div class="container">
     <img class="img" src="src/assets/cards/kryptowire.png" />
-    <h2 class="txt">August 28th 2017 - May 5th, 2018</h2>
-    <p class="txt">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at
-      varius vel pharetra vel turpis. Pretium fusce id velit ut. Viverra
-      accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Nibh ipsum
-      consequat nisl vel pretium. Cras tincidunt lobortis feugiat vivamus.
-      Integer feugiat scelerisque varius morbi enim nunc faucibus a
-      pellentesque. Purus gravida quis blandit turpis cursus in hac habitasse
-      platea. Amet risus nullam eget felis eget nunc lobortis mattis. Justo
-      donec enim diam vulputate ut pharetra. Ultricies integer quis auctor elit
-      sed vulputate mi. Est velit egestas dui id ornare arcu odio. Adipiscing
-      commodo elit at imperdiet dui accumsan sit amet. Diam sollicitudin tempor
-      id eu nisl. Quam quisque id diam vel. Augue neque gravida in fermentum.
-      Auctor neque vitae tempus quam pellentesque nec. Volutpat ac tincidunt
-      vitae semper quis. Euismod in pellentesque massa placerat duis ultricies
-      lacus. Et netus et malesuada fames ac turpis. Tortor posuere ac ut
-      consequat semper viverra nam. Egestas maecenas pharetra convallis posuere
-      morbi leo urna molestie at. Imperdiet nulla malesuada pellentesque elit
-      eget gravida cum sociis.
-    </p>
+    <h1 class="role">Mobile App Security Team Member</h1>
+    <h2 class="date">August 28th 2017 - May 5th, 2018</h2>
+    <ul class="text">
+      <li>
+        Participated with Kryptowire, LLC. in conjuction with George Mason
+        University as a senior sponsored design project
+      </li>
+      <li>
+        Researched available tools for decompiling Android applications into
+        readable Smali code (readable format of binary Dalvik bytecode)
+      </li>
+      <li>
+        Developed an official proposal including a work breakdown structure
+        (WBS), a deliverable/task schedule, including regular meetings with
+        special matter expert (SME) and customer
+      </li>
+      <li>
+        Developed an android framework to disassemble Android APKs, inject code
+        to modify functionality, and repackage to run on compatible Android
+        devices
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,11 +36,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
-  background: #34D399;
+  background: #34d399;
   display: grid;
   grid-template-areas:
     "img txt"
-    "img txt";
+    "img txt"
+    "role txt"
+    "date txt";
   margin-top: 10%;
   margin-left: 30%;
   width: 60%;
@@ -48,9 +51,26 @@ export default defineComponent({
 
 .img {
   grid-area: img;
+  justify-self: center;
+  align-self: center;
+  height: 7vh;
+  margin: 3em;
 }
-
+.role {
+  grid-area: role;
+  font-size: 1.2em;
+  justify-self: center;
+  align-self: start;
+}
+.date {
+  grid-area: date;
+  font-size: 1em;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 1.5em;
+}
 .text {
   grid-area: txt;
+  align-self: center;
 }
 </style>

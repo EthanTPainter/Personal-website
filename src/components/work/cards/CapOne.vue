@@ -1,27 +1,31 @@
 <template>
   <div class="container">
     <img class="img" src="src/assets/cards/capitalone.svg" />
-    <h2 class="txt">FEBRURARY 22nd, 2021 - PRESENT</h2>
-    <p class="txt">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at
-      varius vel pharetra vel turpis. Pretium fusce id velit ut. Viverra
-      accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Nibh ipsum
-      consequat nisl vel pretium. Cras tincidunt lobortis feugiat vivamus.
-      Integer feugiat scelerisque varius morbi enim nunc faucibus a
-      pellentesque. Purus gravida quis blandit turpis cursus in hac habitasse
-      platea. Amet risus nullam eget felis eget nunc lobortis mattis. Justo
-      donec enim diam vulputate ut pharetra. Ultricies integer quis auctor elit
-      sed vulputate mi. Est velit egestas dui id ornare arcu odio. Adipiscing
-      commodo elit at imperdiet dui accumsan sit amet. Diam sollicitudin tempor
-      id eu nisl. Quam quisque id diam vel. Augue neque gravida in fermentum.
-      Auctor neque vitae tempus quam pellentesque nec. Volutpat ac tincidunt
-      vitae semper quis. Euismod in pellentesque massa placerat duis ultricies
-      lacus. Et netus et malesuada fames ac turpis. Tortor posuere ac ut
-      consequat semper viverra nam. Egestas maecenas pharetra convallis posuere
-      morbi leo urna molestie at. Imperdiet nulla malesuada pellentesque elit
-      eget gravida cum sociis.
-    </p>
+    <h1 class="role">Senior Associate Software Engineer</h1>
+    <h2 class="date">February 22nd, 2021 - PRESENT</h2>
+    <ul class="text">
+      <li>
+        Developed backend microservice APIs in Java Spring Boot and NodeJS
+        (TypeScript), and frontend features in Angular and VueJS
+      </li>
+      <li>
+        Managed application vulnerabilities and coordinated efforts to resolve
+        within allotted time periods
+      </li>
+      <li>Provisioned and deployed code to AWS ECS and EKS clusters</li>
+      <li>
+        Designed unit, functional, and performance tests for API business logic
+        and performance metric validations
+      </li>
+      <li>
+        Managed API versioning and Swagger documentation for major and minor
+        updates for multiple APIs
+      </li>
+      <li>
+        Created Flyway migrations for new tables and field changes to a
+        PostgreSQL database
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,11 +39,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
-  background: #60A5FA;
+  background: #60a5fa;
   display: grid;
   grid-template-areas:
     "img txt"
-    "img txt";
+    "img txt"
+    "role txt"
+    "date txt";
   margin-top: 10%;
   margin-left: 10%;
   width: 60%;
@@ -48,9 +54,24 @@ export default defineComponent({
 
 .img {
   grid-area: img;
-  height: 100vh;
+  justify-self: center;
+  align-self: center;
+  height: 15vh;
+  margin: 3em;
 }
-
+.role {
+  grid-area: role;
+  font-size: 1.2em;
+  justify-self: center;
+  align-self: start;
+}
+.date {
+  grid-area: date;
+  font-size: 1em;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 1.5em;
+}
 .text {
   grid-area: txt;
 }

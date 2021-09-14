@@ -1,27 +1,37 @@
 <template>
   <div class="container">
     <img class="img" src="src/assets/cards/infinitive.svg" />
-    <h2 class="txt">October 5th, 2020 - FEBRUARY 19th, 2021</h2>
-    <p class="txt">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at
-      varius vel pharetra vel turpis. Pretium fusce id velit ut. Viverra
-      accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Nibh ipsum
-      consequat nisl vel pretium. Cras tincidunt lobortis feugiat vivamus.
-      Integer feugiat scelerisque varius morbi enim nunc faucibus a
-      pellentesque. Purus gravida quis blandit turpis cursus in hac habitasse
-      platea. Amet risus nullam eget felis eget nunc lobortis mattis. Justo
-      donec enim diam vulputate ut pharetra. Ultricies integer quis auctor elit
-      sed vulputate mi. Est velit egestas dui id ornare arcu odio. Adipiscing
-      commodo elit at imperdiet dui accumsan sit amet. Diam sollicitudin tempor
-      id eu nisl. Quam quisque id diam vel. Augue neque gravida in fermentum.
-      Auctor neque vitae tempus quam pellentesque nec. Volutpat ac tincidunt
-      vitae semper quis. Euismod in pellentesque massa placerat duis ultricies
-      lacus. Et netus et malesuada fames ac turpis. Tortor posuere ac ut
-      consequat semper viverra nam. Egestas maecenas pharetra convallis posuere
-      morbi leo urna molestie at. Imperdiet nulla malesuada pellentesque elit
-      eget gravida cum sociis.
-    </p>
+    <h2 class="role">Principal Full Stack Software Developer</h2>
+    <h2 class="date">October 5th, 2020 - February 19th, 2021</h2>
+    <ul class="text">
+      <li>
+        Developed an application to allow high school staff to request
+        accommodations for students when taking accredited College Board exams
+      </li>
+      <li>
+        Developed frontend features in TypeScript and React with Babel and
+        Webpack
+      </li>
+      <li>
+        Developed backend microservices in Python and NodeJS, and deployed to
+        AWS via the Serverless Framework
+      </li>
+      <li>
+        Created a custom authorizer and applied an authorization pattern for
+        microservices for managing document processing, creation, and registry
+      </li>
+      <li>
+        Maintained data consistency across NoSQL and legacy Oracle database
+      </li>
+      <li>
+        Coordinated, deployed, and validated production releases for immediate
+        production defects
+      </li>
+      <li>
+        Provisioned and managed release candidate, or demo, environments for
+        developing new features for expected production release schedules
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,11 +45,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .container {
-  background: #D97706;
+  background: #d97706;
   display: grid;
   grid-template-areas:
     "img txt"
-    "img txt";
+    "img txt"
+    "role txt"
+    "date txt";
   margin-top: 10%;
   margin-left: 30%;
   width: 60%;
@@ -48,9 +60,23 @@ export default defineComponent({
 
 .img {
   grid-area: img;
-  height: 20vh;
+  justify-self: center;
+  align-self: center;
+  height: 9vh;
 }
-
+.role {
+  grid-area: role;
+  font-size: 1.2em;
+  justify-self: center;
+  align-self: start;
+}
+.date {
+  grid-area: date;
+  font-size: 1em;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 1.5em;
+}
 .text {
   grid-area: txt;
 }
